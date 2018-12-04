@@ -19,12 +19,12 @@ class Movie(models.Model):
     )
     title = models.TextField(
         max_length=200,
-        verbose_name='Original Title'
+        verbose_name='Title'
     )
     title_translated = models.TextField(
         max_length=200,
         blank=True,
-        verbose_name='Title'
+        verbose_name='Translated Title'
     )
     director = models.TextField(
         max_length=150,
@@ -47,7 +47,8 @@ class Movie(models.Model):
     cover = models.ImageField(
         upload_to='covers',
         blank=True,
-        verbose_name='Cover'
+        verbose_name='Cover',
+        default="defaults/cover.png"
 
     )
     categories = models.ManyToManyField(
