@@ -29,3 +29,15 @@ a {
 .right {
     margin-left: auto;
 }
+
+@media only screen and (max-width: 768px) {
+    .navbar, .item {
+        flex-direction: column;
+    }
+    .item {
+        display:none;
+    }
+    .right item {
+        margin-left:0;
+    }
+}
