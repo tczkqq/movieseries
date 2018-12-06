@@ -1,21 +1,31 @@
 body {
     background-color: #222f3e;
     font-family: 'Roboto', sans-serif;
+    color: white;
+}
+.header {
+    position: sticky;
+    top: 0px;
+    margin: 0px;
+    padding: 0px;
+    background-color: #222f3e;
+}
+.navbar {
+    display: flex;
+    height: 60px;
+    align-items: center;
+}
+.item {
+    display: inline-block;
+}
+.navbar a {
+    padding: 20px;
+    font-size: 20px;
 }
 a {
-    margin-top: auto;
-    margin-bottom: auto;
-    color: #fff;
+    color: white;
     text-decoration: none;
 }
-.logo {
-    font-family: 'Indie Flower', cursive;
-    font-size: 36px;
-}
-.c-item {
-    font-size: 16px;
-}
-.container {
-    display: flex;
-    justify-content: space-between;
+.right {
+    margin-left: auto;
 }
