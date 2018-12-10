@@ -9,3 +9,4 @@ Movieseries is site with movies and series build with django
  - FrontEnd (Resp)
  - Search
  - Migrate to Mysql/PostgreSQL
+ - Auto searching for trailer
