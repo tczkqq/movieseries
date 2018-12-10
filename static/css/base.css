@@ -12,7 +12,6 @@ body {
 }
 .navbar {
     display: flex;
-    height: 60px;
     align-items: center;
 }
 .item {
@@ -29,18 +28,29 @@ a {
 .right {
     margin-left: auto;
 }
-<<<<<<< HEAD
+.toggle {
+    display: none;
+}
 
 @media only screen and (max-width: 768px) {
+    
+    .navbar {
+        display: flex;
+        flex: 1;
+    }
     .navbar, .item {
         flex-direction: column;
     }
     .item {
         display:none;
     }
+    .safe {
+        display: flex;
+    }
     .right item {
         margin-left:0;
     }
+    .toggle {
+        
+    }
 }
-=======
->>>>>>> a422e7ae7db0246f871b12a2b410f049d0f37be1
