@@ -2,6 +2,32 @@ from django.db import models
 # Create your models here.
 
 
+class Player(models.Model):
+
+    text = models.TextField(
+        primary_key=True,
+        unique=True,
+        max_length=20
+    )
+    icon = models.ImageField(  # Add default icon
+        default='icons/default.png',
+    )
+
+
+class Link(models.Model):
+
+    id = models.AutoField(
+        primary_key=True
+    )
+    link = models.TextField(
+        unique=True
+    )
+    player = models.ForeignKey(
+        Player,
+        on_delete=models.CASCADE
+    )
+
+
 class Categories(models.Model):
 
     name = models.TextField(max_length=50, primary_key=True)
@@ -55,6 +81,10 @@ class Movie(models.Model):
         verbose_name='Categories'
     )
     trailer_link = models.TextField(
+        blank=True
+    )
+    link = models.ManyToManyField(
+        Link,
         blank=True
     )
 
