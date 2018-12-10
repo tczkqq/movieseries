@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'core',
     'accounts',
     'movieseries',
-    'taggit',
+    'mylist',
 ]
 
 MIDDLEWARE = [
