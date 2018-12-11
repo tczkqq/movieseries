@@ -7,14 +7,18 @@ from movieseries.models import Movie
 class MyList(models.Model):
 
     id = models.AutoField(
-        primary_key=True
+        primary_key=True,
+        default=1
     )
     user_id = models.ForeignKey(
         User,
         on_delete=models.CASCADE
     )
-    movies = models.ManyToManyField(
+    show = models.ForeignKey(
         Movie,
-        blank=True
+        on_delete=models.CASCADE,
     )
     # series
+
+    def __str__(self):
+        return str(self.user_id)

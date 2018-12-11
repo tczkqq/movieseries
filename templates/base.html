@@ -22,7 +22,7 @@
 
                 {% if user.is_authenticated %}
                 <a href="{% url 'movieseries:index' %}" class="item"> Browse </a>
-                <a href="#" class="item"> My List </a>
+                <a href="{% url 'mylist:list' %}" class="item"> My List </a>
             </div>
             <div class="right">
                 {% if user.is_superuser %}
