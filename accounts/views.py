@@ -3,35 +3,36 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy]
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def login_view(request):
     if request.method == "POST":
-        form = AuthenticationForm(data=request.POST)
+        form= AuthenticationForm(data=request.POST)
         if form.is_valid():
-            user = form.get_user()
+            user= form.get_user()
             login(request, user)
             if 'next' in request.POST:
                 return redirect(request.POST.get('next'))
             else:
                 return redirect('core:index')
     else:
-        form = AuthenticationForm()
+        form= AuthenticationForm()
     return render(request, "accounts/login.html", {'form': form})
-    
+
 def register_view(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form= UserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save()
+            user= form.save()
             login(request, user)
             return redirect('core:index')
     else:
-        form = UserCreationForm()
+        form= UserCreationForm()
     return render(request, "accounts/register.html", {'form': form})
 
-
+@login_required
 def logout_view(request):
     if request.method == 'GET':
             logout(request)
