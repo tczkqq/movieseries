@@ -2,11 +2,9 @@
 Movieseries is site with movies and series build with django
 
 ## Todo
- - My list
- - Support TV Series
- - Links to shows
- - Comments/Likes
  - FrontEnd (Resp)
  - Search
+ - Support TV Series
+ - Comments/Likes/Rating
  - Migrate to Mysql/PostgreSQL
  - Auto searching for trailer
