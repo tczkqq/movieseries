@@ -2,6 +2,6 @@
 
 {% block content %}
 {% for element in list %}
- test{{ element.user_id }}
+ test <img src="{{ element.show.cover.url }}">
 {% endfor %}
 {% endblock content %}

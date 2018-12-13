@@ -28,18 +28,19 @@ a {
 .right {
     margin-left: auto;
 }
-.toggle {
+.burger {
     display: none;
 }
 
 @media only screen and (max-width: 768px) {
-    
+    item .toggle {
+        flex-direction: column;
+        display: flex;
+        background-color: pink;
+    }
     .navbar {
         display: flex;
         flex: 1;
-    }
-    .navbar, .item {
-        flex-direction: column;
     }
     .item {
         display:none;
@@ -50,7 +51,5 @@ a {
     .right item {
         margin-left:0;
     }
-    .toggle {
-        
-    }
+    
 }
