@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
+Username = {{ user.username}}
+<a href="{% url 'accounts:changepass' %}">Change Password</a>
+{% endblock content %}
