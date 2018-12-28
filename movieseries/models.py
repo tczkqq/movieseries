@@ -93,7 +93,6 @@ class Movie(models.Model):
         blank=True,
         verbose_name='Cover',
         default="defaults/cover.png"
-
     )
     categories = models.ManyToManyField(
         Categories,

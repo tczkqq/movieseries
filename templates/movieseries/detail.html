@@ -12,10 +12,17 @@
 <h4> Description: {{ movie.description }} </h4>
 
 <p>
+    {% if user.is_authenticated %}
     <form action="{% url 'movieseries:detail' id=movie.id %}" method="post">
         {% csrf_token %}
         {{ form }}
         <button type="submit">Comment</button>
     </form>
+    {% endif %}
 </p>
+
+{% for comment in movie.comments.all %}
+        {{comment.author}}
+        a
+{% endfor %}
 {% endblock content %}
