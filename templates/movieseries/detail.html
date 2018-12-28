@@ -1,14 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% if movie.title_translated  %}
-        <h1> {{ movie.title_translated }}({{ movie.movie_year }}) / {{ movie.title }} </h1>
-    {% else %}
-        <h1> {{ movie.title }} ({{ movie.movie_year }}) </h1>
-    {% endif %}
+{% if movie.title_translated %}
+<h1> {{ movie.title_translated }}({{ movie.movie_year }}) / {{ movie.title }} </h1>
+{% else %}
+<h1> {{ movie.title }} ({{ movie.movie_year }}) </h1>
+{% endif %}
 
-    <img src="{{ movie.cover.url }}">
-    <h2> {{ movie.director }} </h2>
-    <h4> {{ movie.description }} </h4>
+<img src="{{ movie.cover.url }}">
+<h2> Director: {{ movie.director }} </h2>
+<h4> Description: {{ movie.description }} </h4>
 
+<p>
+    <form action="{% url 'movieseries:detail' id=movie.id %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Comment</button>
+    </form>
+</p>
 {% endblock content %}

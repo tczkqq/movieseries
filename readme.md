@@ -5,6 +5,6 @@ Movieseries is site with movies and series build with django
  - FrontEnd (Resp)
  - Search
  - Support TV Series
- - Comments/Likes/Rating
+ - Likes/Rating
  - Migrate to Mysql/PostgreSQL
  - Auto searching for trailer

@@ -1,5 +1,22 @@
 from django.db import models
-# Create your models here.
+from django.contrib.auth.models import User
+
+
+class Comment(models.Model):
+
+    id = models.AutoField(
+        primary_key=True
+    )
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE
+    )
+    text = models.TextField(
+        max_length=255
+    )
+
+    def __str__(self):
+        return "{0} | {1}".format(self.text, self.author)
 
 
 class Player(models.Model):
@@ -26,6 +43,9 @@ class Link(models.Model):
         Player,
         on_delete=models.CASCADE
     )
+
+    def __str__(self):
+        return "{0} | {1}".format(self.id, self.player)
 
 
 class Categories(models.Model):
@@ -85,6 +105,10 @@ class Movie(models.Model):
     )
     link = models.ManyToManyField(
         Link,
+        blank=True
+    )
+    comments = models.ManyToManyField(
+        Comment,
         blank=True
     )
 
