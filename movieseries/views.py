@@ -15,6 +15,7 @@ def index_view(request):
 def detail_view(request, id):
     try:
         movie = Movie.objects.get(id=id)
+
     except:
         raise Http404("Poll does not exist")
 
@@ -24,9 +25,11 @@ def detail_view(request, id):
             instance = form.save(commit=False)
             instance.author = request.user
             instance.save()
+            instance.movie_set.add(movie)
             return redirect('movieseries:detail', id=id)
     else:
         form = forms.CreateComment()
+
     context = {
         'movie': movie,
         'form': form,

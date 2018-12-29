@@ -22,7 +22,7 @@
 </p>
 
 {% for comment in movie.comments.all %}
-        {{comment.author}}
-        a
+        Author:{{comment.author}}
+        Text: {{comment.text}}
 {% endfor %}
 {% endblock content %}
