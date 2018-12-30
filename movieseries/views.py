@@ -1,4 +1,4 @@
-from django.shortcuts import render, Http404, redirect
+from django.shortcuts import render, Http404, redirect, get_object_or_404
 from movieseries.models import Movie
 from . import forms
 # Create your views here.
@@ -13,12 +13,7 @@ def index_view(request):
 
 
 def detail_view(request, id):
-    try:
-        movie = Movie.objects.get(id=id)
-
-    except:
-        raise Http404("Poll does not exist")
-
+    movie = get_object_or_404(Movie, id=id)
     if request.method == 'POST':
         form = forms.CreateComment(request.POST)
         if form.is_valid():
