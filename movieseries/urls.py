@@ -6,6 +6,5 @@ app_name = 'movieseries'
 
 urlpatterns = [
     path('', views.index_view, name='index'),
-    path('<int:id>/', views.detail_view, name='detail')
-] 
-
+    path('<int:id>', views.detail_view, name='detail')
+]

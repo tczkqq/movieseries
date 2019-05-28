@@ -1,0 +1,9 @@
+.settings {
+    font-size: 20px;
+}
+.settings a {
+    text-decoration: none;
+}
+.settings a:hover {
+    color: #f2b632;
+}

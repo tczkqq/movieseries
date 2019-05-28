@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-<h1> Change password </h1>
+
+<h1> Zmień hasło </h1>
 <form method="post">
     {{ form }}
     {% csrf_token %}
-    <button type="submit"> Change password </button>
+    <button type="submit"> Zmień </button>
 </form>
+
 {% endblock content %}

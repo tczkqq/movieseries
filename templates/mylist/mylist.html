@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static from static %}
+{% block imports%}
+<link rel="stylesheet" href="{% static 'css/mylist.css' %}">
+{% endblock imports %}
+
+{% block content %}
+<section class="list">
+    <header class="block-head">
+        <h1>Moja Lista</h1>
+    </header>
+    {% for movie in list %}
+    <div class="list-element">
+        <h2> {{movie.show.title }}</h2>
+        <img src="{{ movie.show.cover.url }}">
+    </div>
+    {% endfor %}
+</section>
+{% endblock content %}

@@ -1,5 +1,20 @@
 {% extends "base.html" %}
+{% load static from static %}
+{% block imports %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock imports %}
 {% block content %}
-Username = {{ user.username}}
-<a href="{% url 'accounts:changepass' %}">Change Password</a>
+<h1>Ustawienia konta</h1>
+<ul class="settings">
+    <a href="{% url 'accounts:changepass' %}">
+        <li>Zmień hasło</li>
+    </a>
+    <a href="#">
+        <li>Zmień adres email</li>
+    </a>
+    <a href="#">
+        <li>Usuń konto</li>
+    </a>
+</ul>
+
 {% endblock content %}

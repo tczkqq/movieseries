@@ -14,9 +14,10 @@ class MyList(models.Model):
         User,
         on_delete=models.CASCADE
     )
-    show = models.ForeignKey(
+    show = models.ManyToManyField(
         Movie,
-        on_delete=models.CASCADE,
+        blank=True,
+        verbose_name='Movie'
     )
     # series
 

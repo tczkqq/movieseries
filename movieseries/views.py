@@ -1,13 +1,15 @@
 from django.shortcuts import render, Http404, redirect, get_object_or_404
-from movieseries.models import Movie
+from movieseries.models import Movie, Categories
 from . import forms
 # Create your views here.
 
 
 def index_view(request):
     movies = Movie.objects.all()
+    categories = Categories.objects.all()
     context = {
-        'movies': movies
+        'movies': movies,
+        'categories': categories,
     }
     return render(request, 'movieseries/index.html', context)
 

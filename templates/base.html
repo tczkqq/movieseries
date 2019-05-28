@@ -7,33 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto">
-
     {% block imports %}
-
     {% endblock imports %}
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
     <title>MovieSeries</title>
 </head>
 
 <body>
     <header class="header">
-        <nav class="navbar">
-            <a href="{% url 'core:index' %}" class="item logo safe">MovieSeries</a>
-            {% if user.is_authenticated %}
-            <a href="{% url 'movieseries:index' %}" class="item"> Browse </a>
-            <a href="{% url 'mylist:list' %}" class="item"> My List </a>
-            <div class="right">
-                {% if user.is_superuser %}
-                <a href="{% url 'admin:index' %}" class="item">Admin</a>
+        <nav class="navigation">
+            <a href="{% url 'core:index' %}" class="logo">MovieSeries</a>
+            <ul class="nav-left">
+                {% if user.is_authenticated %}
+                <li class="nav-item"><a href="{% url 'mylist:list'%}">Moja lista</a></li>
                 {% endif %}
-                <a href="{% url 'accounts:logout' %}" class="item">Logout</a>
+                <li class="nav-item"><a href="{% url 'movieseries:index' %}">Przegladaj</a></li>
+            </ul>
+            <ul class="nav-right">
+                {% if user.is_authenticated %}
+                <li class="nav-item"><a href="{% url 'accounts:myprofile' %}">Profil</a></li>
+                <li class="nav-item"><a href="{% url 'accounts:logout' %}">Wyloguj</a></li>
                 {% else %}
-                <div class="right">
-                    <a href="{% url 'accounts:login' %}" class="item">Login</a>
-                    <a href="{% url 'accounts:register' %}" class="item">Register</a>
-                    {% endif %}
-                    <a href="#" class="item safe burger">Hamburger</a>
-                </div>
+                <li class="nav-item"><a href="{% url 'accounts:login' %}">Logowanie</a></li>
+                <li class="nav-item"><a href="{% url 'accounts:register' %}">Zarejestruj się</a></li>
+                {% endif %}
+            </ul>
         </nav>
     </header>
     <main>
@@ -41,7 +39,9 @@
 
         {% endblock content %}
     </main>
+    <footer>
+
+    </footer>
 </body>
-<script src="{% static 'js/base.js' %}"></script>
 
 </html>

@@ -1,7 +1,39 @@
 {% extends "base.html" %}
+{% load static from static %}
+
+{% block imports %}
+<link rel="stylesheet" href="{% static 'css/browse.css' %}">
+{% endblock imports %}
+
 {% block content %}
-    {% for movie in movies %}
-        <h1><a href="{% url 'movieseries:detail' id=movie.id %}">{{ movie.title }}</a></h1>
-        <img src="{{ movie.cover.url }}">
-    {% endfor %}
+<h1>Przeglądaj</h1>
+<div class="layout">
+    <aside class="fillter">
+        <div class="categories">
+            <h2>Kategorie</h2>
+            <ul>
+                {% for category in categories %}
+                <a href="#">
+                    <li>{{ category.name }}</li>
+                </a>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="myear">
+            <h2>Rok produkcji</h2>
+            <label> od: <input type="number" min="2000" max="2020" class="ypicker"> </label> </br>
+            <label> do: <input type="number" min="2000" max="2020" class="ypicker"> </label>
+        </div>
+    </aside>
+    <section class="movies">
+        {% for movie in movies %}
+        <div class="movie">
+            <a href="{% url 'movieseries:detail' id=movie.id %}">
+                <h2>{{ movie.title }} ({{ movie.movie_year }})</h2>
+                <img src="{{ movie.cover.url }}">
+            </a>
+        </div>
+        {% endfor %}
+    </section>
+</div>
 {% endblock content %}

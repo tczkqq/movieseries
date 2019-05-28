@@ -1,0 +1,14 @@
+.list {
+    display: flex;
+    flex-direction: column;
+}
+.list-element {
+    border-style: groove;
+    width: 30%;
+    height: 30%;
+}
+.list-element img {
+    width: 100%;
+    height: 100%;
+    
+}

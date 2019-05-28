@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-
 {% if movie.title_translated %}
 <h1> {{ movie.title_translated }}({{ movie.movie_year }}) / {{ movie.title }} </h1>
 {% else %}
@@ -22,7 +21,7 @@
 </p>
 
 {% for comment in movie.comments.all %}
-        Author:{{comment.author}}
-        Text: {{comment.text}}
+Author:{{comment.author}}
+Text: {{comment.text}}
 {% endfor %}
 {% endblock content %}

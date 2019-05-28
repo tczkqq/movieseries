@@ -1,55 +1,90 @@
 body {
-    background-color: #222f3e;
-    font-family: 'Roboto', sans-serif;
-    color: white;
+    background-color: #252839;
+    font-family: 'Roboto Slab', serif;
+    color: #b5b5b7;
+    margin: 0px;
+    font-size: 17px;
 }
+a {
+    color: #b5b5b7;
+}
+main { 
+    margin: 0px 40px;
+}
+
 .header {
     position: sticky;
     top: 0px;
-    margin: 0px;
-    padding: 0px;
-    background-color: #222f3e;
+    background-color: #252839;
+    height: 75px;
 }
-.navbar {
+.navigation {
     display: flex;
-    align-items: center;
-}
-.item {
-    display: inline-block;
-}
-.navbar a {
-    padding: 20px;
-    font-size: 20px;
-}
-a {
-    color: white;
-    text-decoration: none;
-}
-.right {
-    margin-left: auto;
-}
-.burger {
-    display: none;
+    font-size: 18px;
+    justify-content: space-between;
 }
 
-@media only screen and (max-width: 768px) {
-    item .toggle {
+.logo  {
+    font-size: 28px;
+    list-style-type: none;
+    padding: 18px;
+    margin-left: 20px;
+    color: #f2b632;
+    text-decoration: none;
+}
+
+.nav-left {
+    margin-right: auto;
+    padding-left: 0px;
+}
+.nav-right {
+    margin-right: 20px;
+}
+.nav-item {
+    display: inline-flex;
+    padding: 9px;
+    list-style-type: none;
+}
+.nav-item a {
+    text-decoration: none;
+    color:#b5b5b7;
+}
+.nav-item a:hover {
+    color: #f2b632;
+}
+
+
+@media only screen and (max-width:700px) {
+    .header {
+        position: static;
+        min-width: 480px;
+        height: 300px;
+        width: 100%;
+        margin: 0px;
+    }
+    .navigation  {
         flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .nav-left {
         display: flex;
-        background-color: pink;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px;
     }
-    .navbar {
+    .nav-right {
         display: flex;
-        flex: 1;
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px;
     }
-    .item {
-        display:none;
+    .nav-item a{    
+        width: 200px;
+        text-align: center;
+        border-style: groove;
     }
-    .safe {
-        display: flex;
+    .logo {
+        margin: 0px;
     }
-    .right item {
-        margin-left:0;
-    }
-    
 }

@@ -10,4 +10,4 @@ def list_view(request):
     context = {
         'list': mylist
     }
-    return render(request, 'mylist/list.html', context)
+    return render(request, 'mylist/mylist.html', context)
